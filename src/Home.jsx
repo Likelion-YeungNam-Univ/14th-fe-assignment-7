@@ -36,7 +36,7 @@ const Home = () => {
     <div>
       <div className='flex flex-row mt-[40px]'>
         {/*더미 이미지*/}
-        <div className=" flex flex-col w-[600px] h-[400px] ml-[20px] mr-[20px] mb-[20px] rounded-[20px]">
+        <div className=" flex flex-col flex-1 h-[400px] ml-[20px] mr-[20px] mb-[20px] rounded-[20px]">
           <img src="./goodjob.jpeg" alt="Good Job" className="w-full h-full object-cover rounded-[20px]" />
         <div>
           <h1 className='text-2xl font-bold mb-[20px] mt-[20px]'>짜란다 짜란다</h1>
@@ -59,16 +59,22 @@ const Home = () => {
             {/*좋아요,싫어요,공유,메뉴 */}
             <div className="gap-[5px] flex">
               <button 
-              onClick={() => handleCounter('like')}
-              className="w-[80px] h-[40px] bg-white border hover:bg-gray-100 cursor-pointer rounded-4xl"
+                onClick={() => handleCounter('like')}
+                className="w-[80px] h-[40px] bg-white border hover:bg-gray-100 cursor-pointer rounded-4xl flex items-center justify-center gap-[4px]"
               >
-                Like {LikeCount}
+                <span className="material-symbols-outlined text-[#000000] group-hover:text-blue-500 transition-colors">
+                  thumb_up
+                </span>
+                <span className="text-[12px]">{LikeCount}</span>
               </button>
-              <button
+              <button   
                onClick={() =>handleCounter('dislike')}
-              className="w-[80px] h-[40px] bg-white border hover:bg-gray-100 cursor-pointer rounded-4xl"
+              className="w-[80px] h-[40px] bg-white border hover:bg-gray-100 cursor-pointer rounded-4xl flex items-center justify-center gap-[4px]"
               >
-                Dislike {DisLikeCount}
+                <span className="material-symbols-outlined text-[#000000] group-hover:text-red-500 transition-colors">
+                  thumb_down
+                </span>
+                {DisLikeCount}
               </button>
               <button className="w-[80px] h-[40px] bg-white border hover:bg-gray-100 cursor-pointer rounded-4xl">
                 Share
@@ -78,14 +84,14 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <div className=' mt-[10px] mb-[20px] w-[600px] h-[100px] bg-gray-300 text-gray-200 rounded-[20px]'>
+          <div className=' mt-[10px] mb-[20px] w-full h-[100px] bg-gray-300 text-gray-200 rounded-[20px]'>
             <p className='ml-[15px] mt-[10px] text-black'>제곧내</p>
           </div>
           <div className='flex flex-col text-[20px] font-bold mt-[10px] '>
             <p className='ml-[8px]'>댓글</p>
             <div className="flex flex-row h-[80px]">
               <input
-                className='w-[525px] mt-[10px] mb-[20px] p-[10px] border-[1px] border-gray-300 rounded-[20px]' 
+                className='flex-1 mt-[10px] mb-[20px] p-[10px] border-[1px] border-gray-300 rounded-[20px]' 
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
