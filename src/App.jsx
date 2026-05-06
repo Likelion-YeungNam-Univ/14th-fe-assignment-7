@@ -1,8 +1,12 @@
 import React from 'react'
+import Home from './Home'
+import {useState} from 'react'
 
 const App = () => {
   return (
-    <div className='text-3xl text-red-300'>App</div>
+    <div>
+      <Home />
+    </div>
   )
 }
 
