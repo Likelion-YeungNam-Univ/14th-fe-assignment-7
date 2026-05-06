@@ -8,8 +8,8 @@ const Card = ({image, title, subtitle}) => {
   return (
     <div className='min-w-[300px] min-h-[200px] rounded-[15px] border-1 border-gray-400'>
       <div className='m-[15px] flex flex-col gap-2'>
-        <div className='overflow-hidden min-w-[270px] min-h-[120px] border-1 border-gray-200 bg-gray-300 flex justify-center items-center'>
-          {image}
+        <div className='overflow-hidden w-[270px] h-[120px] border-1 border-gray-200 bg-gray-300 flex justify-center items-center'>
+          <img src={Dummy} className='object-cover'></img>
         </div>
         <div className='flex flex-col gap-1'>
           <div className='font-bold'>{title}</div>
@@ -66,9 +66,9 @@ const App = () => {
         </div>
 
         <div id="rt_container" className='min-w-[300px] h-3 flex flex-col gap-8 '>
-          <Card image="더미 이미지1" title="2026 영대" subtitle="14기 멋사 대학 화이팅!"/>
-          <Card image="더미 이미지2" title="14기 멋대" subtitle="아이디어톤 화이팅!"/>
-          <Card image="더미 이미지3" title="아이디어톤" subtitle="영대 ISIX팀 화이팅!"/>
+          <Card title="2026 영대" subtitle="14기 멋사 대학 화이팅!"/>
+          <Card title="14기 멋대" subtitle="아이디어톤 화이팅!"/>
+          <Card title="아이디어톤" subtitle="영대 ISIX팀 화이팅!"/>
 
         </div>
       </div>
