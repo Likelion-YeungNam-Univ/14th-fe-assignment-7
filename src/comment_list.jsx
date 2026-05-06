@@ -28,7 +28,7 @@ const Comment_List = () => {
 
   return ( 
     <div> 
-      <div className="text-3xl font-black">댓글</div> 
+      <div className="text-3xl font-black">- 댓글 -</div> 
       <form className="flex gap-5" onSubmit={handleAdd}> 
         <input placeholder="남길 댓글을 입력하세요." value={inputText} onChange={handleComment}/> 
         <button type="submit" className="p-2 w-auto h-auto rounded-2xl border-1 border-gray-300">댓글 달기</button> 
