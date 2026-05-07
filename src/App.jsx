@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import VideoDetailPage from './VideoDetailPage';
 
 const App = () => {
-  return (
-    <div className='text-3xl text-red-300'>App</div>
-  )
-}
+  return <VideoDetailPage />;
+};
 
-export default App
+export default App;
