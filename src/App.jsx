@@ -2,61 +2,55 @@ import React, { useState } from "react";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import SideCard from "./components/SideCard";
 
-const App = () => {
+import mainImg from "./assets/main.jpg";
+import img1 from "./assets/img1.jpg";
+import img2 from "./assets/img2.jpg";
+import img3 from "./assets/img3.jpg";
 
+const App = () => {
   const [like, setLike] = useState(0);
   const [dislike, setDislike] = useState(0);
 
-  
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
 
-  
   const [showModal, setShowModal] = useState(false);
 
-  
   const addComment = () => {
     if (comment.trim() === "") return;
     setShowModal(true);
   };
 
- 
   const confirmComment = () => {
     setComments([...comments, comment]);
     setComment("");
     setShowModal(false);
   };
 
-  
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       addComment();
     }
-  };
+  };//시험기간 대학생 브이로그, 감성 브이로그 카페 투어, 편의점 음식 먹방, 헬스장 루틴 
 
   return (
     <div className="flex gap-6 p-6 bg-gray-100 min-h-screen">
-      
-     
       <div className="flex-1">
+        <img
+          src={mainImg}
+          alt="메인 이미지"
+          className="h-96 w-full object-cover rounded-[40px]"
+        />
 
-       
-        <div className="bg-gray-300 h-96 rounded-[40px] flex flex-col items-center justify-center text-gray-800 font-semibold">
-          <p className="text-3xl">더미 이미지</p>
-          <p className="text-2xl">radius : 40px</p>
-        </div>
-
-       
         <div className="mt-6">
-          <h1 className="text-5xl font-black">제목</h1>
+          <h1 className="text-5xl font-black">나홀로 제주 여행</h1>
+
           <p className="text-gray-400 text-2xl mt-2">
-            재사용 가능한 컴포넌트 구조 연습
+            제주도로 함께 떠나보아요~~
           </p>
         </div>
 
-        
         <div className="flex gap-8 mt-6">
-          
           <button
             onClick={() => setLike(like + 1)}
             className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow"
@@ -74,11 +68,9 @@ const App = () => {
           </button>
         </div>
 
-        
         <div className="mt-12">
           <h2 className="text-4xl font-black mb-4">댓글</h2>
 
-          
           <div className="flex gap-3">
             <input
               type="text"
@@ -97,7 +89,6 @@ const App = () => {
             </button>
           </div>
 
-         
           <div className="mt-6 flex flex-col gap-3">
             {comments.map((item, index) => (
               <div
@@ -111,34 +102,36 @@ const App = () => {
         </div>
       </div>
 
-     
       <div className="flex flex-col gap-4">
         <SideCard
-          title="컴포넌트 제목"
-          desc="컴포넌트를 재사용하여 효율적으로 UI를 구성할 수 있다. "
+          image={img1}
+          title="시험기간 대학생 브이로그"
+          desc="과제와 공부로 바쁜 일상 기록용...."
         />
 
         <SideCard
-          title="컴포넌트 제목"
-          desc="간단한 카드 형태로 정보를 표현한 컴포넌트이다."
+          image={img2}
+          title="편의점 음식 먹방"
+          desc="신상 라면과 디저트"
         />
 
         <SideCard
-          title="컴포넌트 제목"
-          desc="Tailwind CSS를 활용해 스타일을 적용하였다"
+          image={img3}
+          title="저만의 헬스장 루틴 공개합니다"
+          desc="상체 운동 중심으로 진행한 하루 운동 기록"
         />
       </div>
 
-      
       {showModal && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
-          
           <div className="bg-white p-8 rounded-2xl w-80 text-center">
             <h2 className="text-2xl font-bold mb-4">
               해당 댓글을 작성하시겠습니까?
             </h2>
 
-            <p className="mb-6 text-gray-500">{comment}</p>
+            <p className="mb-6 text-gray-500">
+              {comment}
+            </p>
 
             <button
               onClick={confirmComment}
