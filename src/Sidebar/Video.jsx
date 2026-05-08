@@ -31,7 +31,7 @@ const Video = () => {
             key={video.id}
           >
             <img src={video.img} alt={video.title} />
-            <h3>{video.title}</h3>
+            <h3 className="font-bold">{video.title}</h3>
             <p>{video.description}</p>
           </div>
         );

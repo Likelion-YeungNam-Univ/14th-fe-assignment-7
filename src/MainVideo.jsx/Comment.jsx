@@ -23,6 +23,7 @@ const Comment = () => {
 
   return (
     <>
+      {/* 댓글 입력란 */}
       <form>
         <input
           type="text"
@@ -39,7 +40,8 @@ const Comment = () => {
       {isModalOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black bg-opacity-40 z-40 flex items-center justify-center"
+            // 수정 제안 (20으로 변경)
+            className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex items-center justify-center"
             onClick={() => setIsModalOpen(false)} // 배경 클릭 시 닫기
           >
             <div className="bg-white w-100 p-10 rounded-lg shadow-2xl text-center z-50">
@@ -57,6 +59,7 @@ const Comment = () => {
           </div>
         </>
       )}
+      {/* 댓글 입력됨 */}
       <ul>
         {comments.map((comment, index) => (
           <CommentItem key={index} comment={comment} />

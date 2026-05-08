@@ -12,10 +12,12 @@ const Rate = () => {
   };
   return (
     <div className="flex gap-4">
+      {/* 좋아요 */}
       <div>
         <button onClick={handleLike}>👍🏻</button>
         <span>{like}</span>
       </div>
+      {/* 싫어요 */}
       <div>
         <button onClick={handleDislike}>👎🏻</button>
         <span>{dislike}</span>

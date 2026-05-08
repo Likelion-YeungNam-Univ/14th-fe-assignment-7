@@ -1,4 +1,4 @@
-import MainSection from "./MainVideo.jsx/MainSection";
+import MainSection from "./Home/MainSection";
 const App = () => {
   return <MainSection></MainSection>;
 };
