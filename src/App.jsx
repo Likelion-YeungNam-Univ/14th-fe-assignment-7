@@ -1,8 +1,9 @@
 import React from 'react'
+import MainPage from './MainPage'
 
 const App = () => {
   return (
-    <div className='text-3xl text-red-300'>App</div>
+    <MainPage/>
   )
 }
 
