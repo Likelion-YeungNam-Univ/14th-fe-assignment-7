@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import RightCard from './RightCard';
-import CommentModal from './CommetModal.jsx';
+import RightCard from './components/RightCard.jsx';
+import CommentModal from './components/CommetModal.jsx';
+import { FaRegThumbsDown } from "react-icons/fa";
+import { FaRegThumbsUp } from "react-icons/fa";
+
 
 const App = () => {
   const [likes, setLikes] = useState(0);
@@ -50,13 +53,15 @@ const App = () => {
                 onClick={() => setLikes(likes + 1)}
                 className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-blue-50 text-blue-600 font-bold hover:bg-blue-100 transition-all active:scale-95"
               >
-                <span className="text-xl">👍</span> {likes}
+                <FaRegThumbsUp /> {likes}
+
               </button>
               <button 
                 onClick={() => setDislikes(dislikes + 1)}
                 className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-rose-50 text-rose-600 font-bold hover:bg-rose-100 transition-all active:scale-95"
               >
-                <span className="text-xl">👎</span> {dislikes}
+                <FaRegThumbsDown /> {dislikes}
+
               </button>
             </div>
           </div>
