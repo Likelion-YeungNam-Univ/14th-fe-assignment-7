@@ -1,9 +1,6 @@
-import React from 'react'
-
+import MainSection from "./MainVideo.jsx/MainSection";
 const App = () => {
-  return (
-    <div className='text-3xl text-red-300'>App</div>
-  )
-}
+  return <MainSection></MainSection>;
+};
 
-export default App
+export default App;
